@@ -22,7 +22,6 @@ ofile.close()
 sequence = 0
 
 def main (price2, sequence):
-    time.sleep(.100)
     try:
         rawticker = requests.get('https://api.gdax.com/products/' + product + '/ticker').json()
     except AttributeError:
@@ -59,9 +58,11 @@ def main (price2, sequence):
         return opt2(price1, sequence)
 
 def opt1(price1, sequence1):
+    time.sleep(1)
     main(price1, sequence1)
     
 def opt2(price1, sequence):
+    time.sleep(1)
     main(price1, sequence)
     
 main(price2,sequence)
